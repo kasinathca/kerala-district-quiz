@@ -62,6 +62,10 @@ const modalLives = document.getElementById('modal-lives');
 const modalTotal = document.getElementById('modal-total');
 const modalHighScore = document.getElementById('modal-high-score');
 const modalRestart = document.getElementById('modal-restart');
+// Info Modal Elements
+const infoModal = document.getElementById('info-modal');
+const infoBtn = document.getElementById('info-btn');
+const closeInfoBtn = document.getElementById('close-info-btn');
 
 // Initialize
 function init() {
@@ -69,6 +73,25 @@ function init() {
     resetGame();
     resetBtn.addEventListener('click', resetGame);
     modalRestart.addEventListener('click', resetGame);
+
+    // Info Modal Listeners
+    infoBtn.addEventListener('click', () => {
+        infoModal.classList.remove('hidden');
+        infoModal.classList.add('flex');
+    });
+
+    closeInfoBtn.addEventListener('click', () => {
+        infoModal.classList.add('hidden');
+        infoModal.classList.remove('flex');
+    });
+
+    // Close on outside click
+    infoModal.addEventListener('click', (e) => {
+        if (e.target === infoModal) {
+            infoModal.classList.add('hidden');
+            infoModal.classList.remove('flex');
+        }
+    });
 }
 
 function renderMap() {
