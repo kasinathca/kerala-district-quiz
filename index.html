@@ -37,9 +37,19 @@
 
     <!-- Header -->
     <header class="w-full max-w-4xl flex justify-between items-center mb-2 md:mb-6 shrink-0">
-        <div>
-            <h1 class="text-xl md:text-3xl font-bold text-emerald-400">Kerala Quiz</h1>
-            <p class="text-slate-400 text-xs md:text-sm hidden md:block">Test your knowledge of God's Own Country</p>
+        <div class="flex items-center gap-3">
+            <div>
+                <h1 class="text-xl md:text-3xl font-bold text-emerald-400">Kerala Quiz</h1>
+                <p class="text-slate-400 text-xs md:text-sm hidden md:block">Test your knowledge of God's Own Country
+                </p>
+            </div>
+            <button id="info-btn" class="text-slate-400 hover:text-white transition-colors p-1" title="About & Credits">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
         </div>
         <div class="flex gap-2 md:gap-4">
             <div
@@ -113,58 +123,67 @@
 
     </main>
 
-    <!-- SEO Content Section -->
-    <section id="about" class="container mx-auto px-4 py-12 max-w-4xl">
-        <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
-            <h2 class="text-3xl font-bold text-emerald-400 mb-6">About the Kerala District Quiz</h2>
-            <div class="space-y-4 text-slate-300 leading-relaxed">
-                <p>
-                    Welcome to the Ultimate Kerala Geography Quiz! This interactive game is designed to help
-                    students, diverse travelers, and geography enthusiasts master the map of God's Own Country.
-                    Located on the southwestern coast of India, Kerala is known for its serene backwaters, lush green
-                    landscapes, and rich cultural heritage.
-                </p>
-                <h3 class="text-xl font-semibold text-white mt-4">Why Play This Map Game?</h3>
-                <p>
-                    Whether you are preparing for a PSC exam or just curious about the location of **Wayanad's hills**
-                    or Alappuzha's backwaters, this quiz offers a fun way to learn. Instead of boring rote
-                    memorization, you get to interact with the map directly.
-                </p>
-                <h3 class="text-xl font-semibold text-white mt-4">Master All 14 Districts</h3>
-                <p>
-                    Our quiz covers every single district in the state:
-                    <span class="text-slate-400 text-sm block mt-2">
-                        Thiruvananthapuram (Capital), Kollam, Pathanamthitta, Alappuzha, Kottayam, Idukki, Ernakulam,
-                        Thrissur, Palakkad, Malappuram, Kozhikode, Wayanad, Kannur, and Kasaragod.
-                    </span>
-                </p>
-                <p class="mt-4">
-                    Challenge your friends, beat your high score, and become a pro at Kerala's geography today!
-                </p>
+    <!-- Info / About Modal -->
+    <div id="info-modal" class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm hidden z-50 overflow-y-auto">
+        <div class="min-h-full w-full flex items-center justify-center p-4">
+            <div
+                class="bg-slate-800 p-6 md:p-8 rounded-2xl shadow-2xl border border-slate-700 max-w-2xl w-full relative">
+                <button id="close-info-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <h2 class="text-3xl font-bold text-emerald-400 mb-6 text-center">About the Quiz</h2>
+                <div class="space-y-4 text-slate-300 leading-relaxed text-sm md:text-base text-center">
+                    <p>
+                        Welcome to the <strong>Ultimate Kerala Geography Quiz</strong>! This interactive game is
+                        designed to help
+                        students, diverse travelers, and geography enthusiasts master the map of <strong>God's Own
+                            Country</strong>.
+                    </p>
+                    <h3 class="text-xl font-semibold text-white mt-4">Why Play This Map Game?</h3>
+                    <p>
+                        Whether you are preparing for a PSC exam or just curious about the location of <strong>Wayanad's
+                            hills</strong>, this quiz offers a fun way to learn. Instead of boring rote memorization,
+                        you get to
+                        interact with the map directly.
+                    </p>
+                    <h3 class="text-xl font-semibold text-white mt-4">Master All 14 Districts</h3>
+                    <p>
+                        Our quiz covers every single district in the state:
+                        <span class="text-slate-400 text-sm block mt-2">
+                            Thiruvananthapuram (Capital), Kollam, Pathanamthitta, Alappuzha, Kottayam, Idukki,
+                            Ernakulam, Thrissur, Palakkad, Malappuram, Kozhikode, Wayanad, Kannur, and Kasaragod.
+                        </span>
+                    </p>
+                </div>
+
+                <div class="h-px bg-slate-700 w-full my-8"></div>
+
+                <div class="text-center text-slate-500 text-sm">
+                    <p class="mb-2">
+                        Made by <a href="https://github.com/kasinathca" target="_blank"
+                            class="text-emerald-400 font-medium hover:text-emerald-300 transition-colors">Kasinath</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="mailto:cakasinath@gmail.com"
+                            class="hover:text-emerald-300 transition-colors">cakasinath[at]gmail.com</a>
+                    </p>
+                    <p class="text-xs text-slate-600">
+                        Credits:
+                        <a href="https://tailwindcss.com" target="_blank" class="hover:text-slate-400">Tailwind CSS</a>
+                        •
+                        <a href="https://fonts.google.com" target="_blank" class="hover:text-slate-400">Google Fonts</a>
+                        •
+                        <span title="Map Data Source">SVG Map Data (arav-ind)</span>
+                    </p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer / Credits -->
-    <footer class="mt-12 py-8 text-center text-slate-500 text-sm">
-        <div class="container mx-auto px-4">
-            <p class="mb-2">
-                Made by <a href="https://github.com/kasinathca" target="_blank"
-                    class="text-emerald-400 font-medium hover:text-emerald-300 transition-colors">Kasinath</a>
-            </p>
-            <p class="mb-4">
-                <a href="mailto:cakasinath@gmail.com"
-                    class="hover:text-emerald-300 transition-colors">cakasinath[at]gmail.com</a>
-            </p>
-            <div class="h-px bg-slate-800 w-24 mx-auto my-4"></div>
-            <p class="text-xs text-slate-600">
-                Credits:
-                <a href="https://tailwindcss.com" target="_blank" class="hover:text-slate-400">Tailwind CSS</a> •
-                <a href="https://fonts.google.com" target="_blank" class="hover:text-slate-400">Google Fonts</a> •
-                <span title="Map Data Source">SVG Map Data (arav-ind)</span>
-            </p>
-        </div>
-    </footer>
+    </div>
 
     <!-- Game Over Modal -->
     <div id="game-over-modal"
