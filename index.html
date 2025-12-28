@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -32,66 +32,71 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-slate-900 text-slate-100 font-['Inter'] min-h-screen flex flex-col items-center justify-center p-4">
+<body
+    class="bg-slate-900 text-slate-100 font-['Inter'] h-[100dvh] w-screen overflow-hidden flex flex-col items-center justify-start p-2 md:p-4">
 
     <!-- Header -->
-    <header class="w-full max-w-4xl flex justify-between items-center mb-6">
+    <header class="w-full max-w-4xl flex justify-between items-center mb-2 md:mb-6 shrink-0">
         <div>
-            <h1 class="text-3xl font-bold text-emerald-400">Kerala District Quiz</h1>
-            <p class="text-slate-400 text-sm">Test your knowledge of God's Own Country</p>
+            <h1 class="text-xl md:text-3xl font-bold text-emerald-400">Kerala Quiz</h1>
+            <p class="text-slate-400 text-xs md:text-sm hidden md:block">Test your knowledge of God's Own Country</p>
         </div>
-        <div class="flex gap-4">
-            <div class="bg-slate-800 px-4 py-2 rounded-lg shadow-lg border border-slate-700 flex items-center gap-2">
-                <span class="text-slate-400 text-xs uppercase tracking-wider">Lives</span>
-                <div class="text-xl text-red-500" id="lives">❤️❤️❤️</div>
+        <div class="flex gap-2 md:gap-4">
+            <div
+                class="bg-slate-800 px-3 py-1 md:px-4 md:py-2 rounded-lg shadow-lg border border-slate-700 flex items-center gap-2">
+                <span
+                    class="text-slate-400 text-[10px] md:text-xs uppercase tracking-wider hidden md:inline">Lives</span>
+                <div class="text-lg md:text-xl text-red-500" id="lives">❤️❤️❤️</div>
             </div>
-            <div class="bg-slate-800 px-4 py-2 rounded-lg shadow-lg border border-slate-700">
-                <span class="text-slate-400 text-xs uppercase tracking-wider">Score</span>
-                <div class="text-2xl font-bold font-mono" id="score">0/0</div>
+            <div class="bg-slate-800 px-3 py-1 md:px-4 md:py-2 rounded-lg shadow-lg border border-slate-700">
+                <span
+                    class="text-slate-400 text-[10px] md:text-xs uppercase tracking-wider hidden md:inline">Score</span>
+                <div class="text-lg md:text-2xl font-bold font-mono" id="score">0/0</div>
             </div>
         </div>
     </header>
 
     <!-- Game Container -->
     <main
-        class="w-full max-w-4xl bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-700/50 overflow-hidden flex flex-col md:flex-row h-[80vh] md:h-[700px]">
+        class="w-full max-w-4xl bg-slate-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl shadow-xl border border-slate-700/50 overflow-hidden flex flex-col md:flex-row flex-1 min-h-0">
 
         <!-- Sidebar / Game Controls -->
         <div
-            class="w-full md:w-1/3 p-6 flex flex-col justify-center border-b md:border-b-0 md:border-r border-slate-700/50 bg-slate-800/80">
+            class="w-full md:w-1/3 p-4 flex flex-row md:flex-col justify-between md:justify-center items-center md:items-stretch border-b md:border-b-0 md:border-r border-slate-700/50 bg-slate-800/80 shrink-0 gap-4">
 
-            <div id="game-status" class="mb-8 text-center md:text-left">
-                <h2 class="text-xl text-slate-300 mb-2">Find this district:</h2>
+            <div id="game-status" class="text-left md:text-left flex-1">
+                <h2 class="text-sm md:text-xl text-slate-300 md:mb-2">Find:</h2>
                 <div id="target-district"
-                    class="text-2xl md:text-3xl font-bold text-white animate-pulse break-words leading-tight">
+                    class="text-xl md:text-3xl font-bold text-white animate-pulse break-words leading-tight">
                     <!-- Target district name will appear here -->
                     Loading...
                 </div>
             </div>
 
             <div id="feedback-message"
-                class="h-12 text-lg font-medium text-center md:text-left mb-6 opacity-0 transition-opacity duration-300">
+                class="hidden md:block h-12 text-lg font-medium text-center md:text-left mb-6 opacity-0 transition-opacity duration-300">
                 <!-- Feedback (Correct! / Try Again) -->
             </div>
 
             <button id="reset-btn"
-                class="w-full py-3 px-4 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex items-center justify-center gap-2 transition-colors border border-slate-600 group">
+                class="py-2 px-4 md:py-3 md:px-4 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex items-center justify-center gap-2 transition-colors border border-slate-600 group text-sm md:text-base whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 group-hover:rotate-180 transition-transform duration-500" fill="none"
+                    class="h-4 w-4 md:h-5 md:w-5 group-hover:rotate-180 transition-transform duration-500" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                Reset Game
+                Reset
             </button>
 
-            <div class="mt-auto pt-6 text-xs text-center md:text-left text-slate-500">
+            <div class="hidden md:block mt-auto pt-6 text-xs text-center md:text-left text-slate-500">
                 Click on the map to select a district.
             </div>
         </div>
 
         <!-- Map Area -->
-        <div class="w-full md:w-2/3 bg-slate-900 relative p-4 flex items-center justify-center overflow-hidden">
+        <div
+            class="w-full md:w-2/3 bg-slate-900 relative p-2 md:p-4 flex items-center justify-center overflow-hidden flex-1">
             <div id="map-container" class="w-full h-full flex items-center justify-center">
                 <!-- SVG will be injected here by JS -->
                 <svg id="kerala-map" class="w-full h-full max-h-full drop-shadow-2xl"
@@ -121,7 +126,7 @@
                 </p>
                 <h3 class="text-xl font-semibold text-white mt-4">Why Play This Map Game?</h3>
                 <p>
-                    Whether you are preparing for a PSC exam or just curious about the location of Wayanad's hills
+                    Whether you are preparing for a PSC exam or just curious about the location of **Wayanad's hills**
                     or Alappuzha's backwaters, this quiz offers a fun way to learn. Instead of boring rote
                     memorization, you get to interact with the map directly.
                 </p>
@@ -200,4 +205,3 @@
 </body>
 
 </html>
-
