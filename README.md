@@ -2,7 +2,7 @@
 
 A fun, interactive web game to test your knowledge of Kerala's districts!
 
-![Kerala District Quiz Banner](https://via.placeholder.com/800x400?text=Kerala+District+Quiz)
+![Kerala District Quiz Banner]([https://via.placeholder.com/800x400?text=Kerala+District+Quiz](https://kasinathca.github.io/kerala-district-quiz/))
 
 ## 🎮 How to Play
 1.  **Find the District**: The game will prompt you to find a specific district (e.g., "Find: Idukki").
@@ -30,3 +30,4 @@ Simply open `index.html` in your web browser! No installation or server required
 Made with ❤️ by **Kasinath**.
 - Map Data: [arav-ind/svgmaps-india](https://github.com/arav-ind/svgmaps-india)
 - Fonts: Google Fonts (Inter)
+
